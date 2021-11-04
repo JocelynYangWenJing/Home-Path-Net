@@ -3,8 +3,43 @@
 }
 
 #section1{
+    text-align: center;
     background-image: url("https://previews.123rf.com/images/lesniewski/lesniewski1911/lesniewski191100003/133153795-administrative-map-of-the-california-region-san-francisco-bay-area.jpg");
     background-size: cover;
     height: 350px;
     background-repeat: no-repeat;
+    padding-top:120px;
 }
+
+#section2{
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#section2 p{
+    margin: 0 auto;
+    max-width: 500px;
+}
+ #section2 h2{
+     margin-top: 20px;
+     margin-bottom: 15px;
+ }
+
+ #section3 h3{
+     text-align: center;
+     margin-bottom: 25px;
+ }
+
+ hr {
+    border: 0.4px solid black;
+ }
+
+ .card {
+     box-sizing: border-box;
+ }
+
+ #section3 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+ }
