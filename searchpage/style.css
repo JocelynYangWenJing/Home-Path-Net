@@ -2,16 +2,21 @@
     width: 100px;
 }
 
-#section a {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+.d-flex {
+    margin: 0 auto;
 }
+
 
 hr {
     border: 0.4px solid black;
  }
 
- #section b {
+ #section-b {
     text-align: center;
+    margin-bottom: 50px;
+ }
+
+ #section-c {
+     margin-top: 50px;
+     margin-bottom: 50px;
  }
