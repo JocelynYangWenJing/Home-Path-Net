@@ -20,3 +20,13 @@ hr {
      margin-top: 50px;
      margin-bottom: 50px;
  }
+
+ .card {
+    border: none;
+    padding-bottom: 20px;
+}
+
+.card-rapper{
+   border: 1px solid rgba(0, 0, 0, 0.295);
+   border-radius: 0.25 rem ;
+}

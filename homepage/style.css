@@ -54,3 +54,12 @@
     text-align: center;
     margin-bottom: 25px;
  }
+
+ .card {
+     border: none;
+ }
+
+ .card-rapper{
+    border: 1px solid rgba(0, 0, 0, 0.295);
+    border-radius: 0.25 rem ;
+ }
