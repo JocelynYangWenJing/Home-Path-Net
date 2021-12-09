@@ -30,3 +30,7 @@ hr {
    border: 1px solid rgba(0, 0, 0, 0.295);
    border-radius: 0.25 rem ;
 }
+
+.review {
+    padding-top: 15px;
+}
