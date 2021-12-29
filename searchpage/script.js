@@ -4,10 +4,9 @@ function card1Button() {
     var visibility = section.style.display
     if (visibility == "none") {
         section.style.display = "block";
+    } else {
+        section.style.display = "none";
     }
-    var closebutton = section.style.display
-    if (closebutton == "none") {
-        section.style.display = "block";
-    }
+
 }
 button.addEventListener("click" , card1Button);
