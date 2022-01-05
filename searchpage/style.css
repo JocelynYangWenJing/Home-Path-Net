@@ -34,3 +34,9 @@ hr {
 .review {
     padding-top: 15px;
 }
+
+.X {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

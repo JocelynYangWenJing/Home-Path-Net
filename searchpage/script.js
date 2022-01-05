@@ -8,5 +8,15 @@ function card1Button() {
         section.style.display = "none";
     }
 
-}
+} 
 button.addEventListener("click" , card1Button);
+
+var closebutton = document.getElementById("X");
+function Xclosebutton() {
+    var buttonClose = document.getElementById("closeButton1");
+    var closeAction = buttonClose.style.display
+    if (closeAction == "none") {
+        buttonClose.style.display = "block";
+    } 
+}
+closebutton.addEventListener("click" , Xclosebutton);
