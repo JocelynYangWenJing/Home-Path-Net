@@ -4,19 +4,17 @@ function card1Button() {
     var visibility = section.style.display
     if (visibility == "none") {
         section.style.display = "block";
-    } else {
-        section.style.display = "none";
-    }
+    } 
 
 } 
 button.addEventListener("click" , card1Button);
 
 var closebutton = document.getElementById("X");
-function closebutton() {
-    var buttonClose = document.getElementById("closeButton1");
+function Xclosebutton() {
+    var buttonClose = document.getElementById("specifchomestay");
     var closeAction = buttonClose.style.display
-    if (closeAction == "none") {
-        buttonClose.style.display = "block";
+    if (closeAction == "block") {
+        buttonClose.style.display = "none";
     } 
 }
 closebutton.addEventListener("click" , Xclosebutton);
