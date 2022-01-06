@@ -2,9 +2,11 @@
     width: 100px;
 }
 
+
 #section1{
     text-align: center;
-    background-image: url("https://unionsquareshop.com/assets/img/maps/Bay_Area_Map_845w.png");
+    color:black;
+    background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/2c8c4943823893.560759f5afe3e.jpg");
     background-size: cover;
     height: 400px;
     background-repeat: no-repeat;

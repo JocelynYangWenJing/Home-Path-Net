@@ -12,7 +12,7 @@ function card1Button() {
 button.addEventListener("click" , card1Button);
 
 var closebutton = document.getElementById("X");
-function Xclosebutton() {
+function closebutton() {
     var buttonClose = document.getElementById("closeButton1");
     var closeAction = buttonClose.style.display
     if (closeAction == "none") {
