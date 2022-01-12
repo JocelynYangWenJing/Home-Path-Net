@@ -40,3 +40,15 @@ hr {
     top: 0;
     right: 0;
 }
+
+.specifchomestay{
+    display: block;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: lightgray;
+    overflow-y: scroll;
+    height: 80%;
+}
