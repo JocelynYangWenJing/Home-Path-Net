@@ -41,14 +41,14 @@ hr {
     right: 0;
 }
 
-.specifchomestay{
+#specifchomestay{
     display: block;
     position: fixed;
     top:0;
     left:0;
     right:0;
     bottom:0;
-    background: lightgray;
+    background: black;
     overflow-y: scroll;
-    height: 80%;
+    height: 100%;
 }
