@@ -146,7 +146,7 @@ for (var i = 0; i < listOfHomestays.length; i++) {
       <div class="card-body">
       <h5 class="card-title">${homestayName}</h5>
       <p class="card-text">${comment}</p>
-      <a id = "card1" ref="#" class="btn btn-primary">Click here to continue reading!</a>
+      <a id = "card1" ref="#" class="btn btn-primary window-button">Click here to continue reading!</a>
     </div>
       </div>
   </div>`
