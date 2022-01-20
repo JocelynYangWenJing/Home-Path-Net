@@ -147,32 +147,76 @@ var listOfHomestays = [
 
 for (var i = 0; i < listOfHomestays.length; i++) {
     var homestay = listOfHomestays[i];
-    var homestayName = homestay.homestayName.toString();
-    var comment = homestay.comment.toString();
+    if (homestay.id == id) {
+        currentHomestay = homestay;
+    }
     var html = `<div class="card col-sm-4" style="width: 18rem;">
     <div class="card-rapper">
       <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
       <h5 class="card-title">${homestayName}</h5>
       <p class="card-text">${comment}</p>
-      <a id = "card1" ref="#" class="btn btn-primary window-button">Click here to continue reading!</a>
+      <a id = "${id}" ref="#" class="btn btn-primary window-button">Click here to continue reading!</a>
     </div>
       </div>
   </div>`
   document.getElementById("section-c").innerHTML += html;
 }
 
+function getStars(numFilledStars) {
+    var starString = "";
+    for (var i = 0; i < 5; i++) {
+        if (i < numFilledStars) {
+            starString += "★";
+        }
+    } else {
+        starString += "☆";
+    }
+    retrn starString;
+}
+
+function getStars(numFilledStars) {
+    var culture = "";
+for (var i = 0; i < 5; i++) {
+    var numFilledStars = currentHomestay.culture;
+    if (i < numFilledStars) {
+        culture += "★";
+    } else {
+        culture += "☆";
+    }
+    } 
+}
+
+var cleanness = "";
+for (var i = 0; i < 5; i++) {
+    var numFilledStars = currentHomestay.cleanness;
+    if (i < numFilledStars) {
+        cleanness += "★";
+    } else {
+        cleanness += "☆";
+    }
+}
+
 var button = document.getElementsByClassName("window-button");
-function card1Button() {
+
+document.getElementById("culture-rate").innerHTML = getStars(currentHomestay.culture);
+document.getElementById("cleanness-rate").innerHTML = getStars(currentHomestay.cleanness);
+
+
+document.getElementById("homestayName").innerHTML = currentHomestay.homestayName.toString();
+document.getElementById("zipcode").innerHTML = currentHomestay.zipCode.toString();
+
+
+
+function card1Button(e) {
     var section = document.getElementById("specifchomestay");
     var visibility = section.style.display
     if (visibility == "none") {
         section.style.display = "block";
     } 
-
 } 
 for (var i = 0; i < button.length; i++) {
-    button[i].addEventListener("click" , card1Button);
+    button[i].addEventListener("click" , function(e){card1Button(e)});
 }
 
 var closebutton = document.getElementById("X");
