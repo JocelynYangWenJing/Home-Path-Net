@@ -177,18 +177,23 @@ function getStars(numFilledStars) {
 
 var button = document.getElementsByClassName("window-button");
 
-
-
 function card1Button(e) {
     var section = document.getElementById("specifchomestay");
     var visibility = section.style.display
     if (visibility == "none") {
         section.style.display = "block";
     } 
+    var id = e.srcElement.id;
+    var currentHomestay;
+    for (var i = 0; i < listOfHomestays.length; i++) {
+        if (listOfHomestays[i].id == id) {
+            currentHomestay = listOfHomestays[i];
+        }
+    }
     document.getElementById("culture-rate").innerHTML = getStars(currentHomestay.culture);
     document.getElementById("cleanness-rate").innerHTML = getStars(currentHomestay.cleanness);
     document.getElementById("homestayName").innerHTML = currentHomestay.homestayName.toString();
-    document.getElementById("zipcode").innerHTML = currentHomestay.zipCode.toString();
+    document.getElementById("zipCode").innerHTML = currentHomestay.zipCode.toString();
 } 
 for (var i = 0; i < button.length; i++) {
     button[i].addEventListener("click" , function(e){card1Button(e)});
