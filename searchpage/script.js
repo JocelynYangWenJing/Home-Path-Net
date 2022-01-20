@@ -147,9 +147,9 @@ var listOfHomestays = [
 
 for (var i = 0; i < listOfHomestays.length; i++) {
     var homestay = listOfHomestays[i];
-    if (homestay.id == id) {
-        currentHomestay = homestay;
-    }
+    var homestayName = homestay.homestayName.toString();
+    var comment = homestay.comment.toString(); 
+    var id = homestay.id.toString();
     var html = `<div class="card col-sm-4" style="width: 18rem;">
     <div class="card-rapper">
       <img src="..." class="card-img-top" alt="...">
@@ -168,43 +168,14 @@ function getStars(numFilledStars) {
     for (var i = 0; i < 5; i++) {
         if (i < numFilledStars) {
             starString += "★";
+        } else {
+            starString += "☆";
         }
-    } else {
-        starString += "☆";
-    }
-    retrn starString;
-}
-
-function getStars(numFilledStars) {
-    var culture = "";
-for (var i = 0; i < 5; i++) {
-    var numFilledStars = currentHomestay.culture;
-    if (i < numFilledStars) {
-        culture += "★";
-    } else {
-        culture += "☆";
-    }
     } 
-}
-
-var cleanness = "";
-for (var i = 0; i < 5; i++) {
-    var numFilledStars = currentHomestay.cleanness;
-    if (i < numFilledStars) {
-        cleanness += "★";
-    } else {
-        cleanness += "☆";
-    }
+    return starString;
 }
 
 var button = document.getElementsByClassName("window-button");
-
-document.getElementById("culture-rate").innerHTML = getStars(currentHomestay.culture);
-document.getElementById("cleanness-rate").innerHTML = getStars(currentHomestay.cleanness);
-
-
-document.getElementById("homestayName").innerHTML = currentHomestay.homestayName.toString();
-document.getElementById("zipcode").innerHTML = currentHomestay.zipCode.toString();
 
 
 
@@ -214,6 +185,10 @@ function card1Button(e) {
     if (visibility == "none") {
         section.style.display = "block";
     } 
+    document.getElementById("culture-rate").innerHTML = getStars(currentHomestay.culture);
+    document.getElementById("cleanness-rate").innerHTML = getStars(currentHomestay.cleanness);
+    document.getElementById("homestayName").innerHTML = currentHomestay.homestayName.toString();
+    document.getElementById("zipcode").innerHTML = currentHomestay.zipCode.toString();
 } 
 for (var i = 0; i < button.length; i++) {
     button[i].addEventListener("click" , function(e){card1Button(e)});
