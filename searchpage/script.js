@@ -150,11 +150,10 @@ function showHomestays(ListData) {
     for (var i = 0; i < ListData.length; i++) {
         var homestay = ListData[i]; 
         var homestayName = homestay.homestayName.toString();
-        var comment = homestay.comment.toString(); 
+        var comment = homestay.comment.toString().substring(0, 120) + "..."; 
         var id = homestay.id.toString();
         var html = `<div class="card col-sm-4" style="width: 18rem;">
         <div class="card-rapper">
-          <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
           <h5 class="card-title">${homestayName}</h5>
           <p class="card-text">${comment}</p>

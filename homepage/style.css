@@ -8,12 +8,13 @@ body {
 
 #section1{
     text-align: center;
-    color:black;
-    background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/2c8c4943823893.560759f5afe3e.jpg");
+    color: white;
+    background-image: url("https://s.hdnux.com/photos/01/22/22/74/21573426/3/2400x0.jpg");
     background-size: cover;
-    height: 400px;
+    height: 500px;
     background-repeat: no-repeat;
-    padding-top:120px;
+    background-position: center;
+    padding-top: 150px;
 }
 
 #section2{
