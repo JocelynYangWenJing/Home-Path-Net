@@ -4,7 +4,7 @@ var listOfHomestays = [
         "ethnicity": "White",
         "safety": 5,
         "communication": 5,
-        "amennity": 4,
+        "amenity": 4,
         "comfort": 3,
         "food": 3,
         "responsibility": 3,
@@ -20,7 +20,7 @@ var listOfHomestays = [
         "ethnicity": "Asian",
         "safety": 5,
         "communication": 5,
-        "amennity": 5,
+        "amenity": 5,
         "comfort": 5,
         "food": 4,
         "responsibility": 5,
@@ -36,7 +36,7 @@ var listOfHomestays = [
         "ethnicity": "White",
         "safety": 5,
         "communication": 5,
-        "amennity": 5,
+        "amenity": 5,
         "comfort": 5,
         "food": 5,
         "responsibility": 5,
@@ -52,7 +52,7 @@ var listOfHomestays = [
         "ethnicity": "Asian",
         "safety": 5,
         "communication": 5,
-        "amennity": 4,
+        "amenity": 4,
         "comfort": 5,
         "food": 4,
         "responsibility": 5,
@@ -68,7 +68,7 @@ var listOfHomestays = [
         "ethnicity": "Filipino",
         "safety": 5,
         "communication": 4,
-        "amennity": 4,
+        "amenity": 4,
         "comfort": 5,
         "food": 4,
         "responsibility": 5,
@@ -84,7 +84,7 @@ var listOfHomestays = [
         "ethnicity": "Asian",
         "safety": 5,
         "communication": 4,
-        "amennity": 5,
+        "amenity": 5,
         "comfort": 5,
         "food": 5,
         "responsibility": 5,
@@ -100,7 +100,7 @@ var listOfHomestays = [
         "ethnicity": "Hispanic",
         "safety": 3,
         "communication": 2,
-        "amennity": 4,
+        "amenity": 4,
         "comfort": 2,
         "food": 2,
         "responsibility": 1,
@@ -116,7 +116,7 @@ var listOfHomestays = [
         "ethnicity": "Asian",
         "safety": 5,
         "communication": 2,
-        "amennity": 5,
+        "amenity": 5,
         "comfort": 3,
         "food": 3,
         "responsibility": 5,
@@ -132,7 +132,7 @@ var listOfHomestays = [
         "ethnicity": "Asian",
         "safety": 5,
         "communication": 5,
-        "amennity": 5,
+        "amenity": 5,
         "comfort": 5,
         "food": 5,
         "responsibility": 5,
@@ -145,23 +145,27 @@ var listOfHomestays = [
     },
 ];
 
-for (var i = 0; i < listOfHomestays.length; i++) {
-    var homestay = listOfHomestays[i];
-    var homestayName = homestay.homestayName.toString();
-    var comment = homestay.comment.toString(); 
-    var id = homestay.id.toString();
-    var html = `<div class="card col-sm-4" style="width: 18rem;">
-    <div class="card-rapper">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-      <h5 class="card-title">${homestayName}</h5>
-      <p class="card-text">${comment}</p>
-      <a id = "${id}" ref="#" class="btn btn-primary window-button">Click here to continue reading!</a>
-    </div>
-      </div>
-  </div>`
-  document.getElementById("section-c").innerHTML += html;
+function showHomestays(ListData) {
+    document.getElementById("section-c").innerHTML = "";
+    for (var i = 0; i < ListData.length; i++) {
+        var homestay = ListData[i]; 
+        var homestayName = homestay.homestayName.toString();
+        var comment = homestay.comment.toString(); 
+        var id = homestay.id.toString();
+        var html = `<div class="card col-sm-4" style="width: 18rem;">
+        <div class="card-rapper">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+          <h5 class="card-title">${homestayName}</h5>
+          <p class="card-text">${comment}</p>
+          <a id = "${id}" ref="#" class="btn btn-primary window-button">Click here to continue reading!</a>
+        </div>
+          </div>
+      </div>`
+      document.getElementById("section-c").innerHTML += html;
+    }
 }
+showHomestays(listOfHomestays);
 
 function getStars(numFilledStars) {
     var starString = "";
@@ -175,7 +179,6 @@ function getStars(numFilledStars) {
     return starString;
 }
 
-var button = document.getElementsByClassName("window-button");
 
 function card1Button(e) {
     var section = document.getElementById("specifchomestay");
@@ -192,12 +195,27 @@ function card1Button(e) {
     }
     document.getElementById("culture-rate").innerHTML = getStars(currentHomestay.culture);
     document.getElementById("cleanness-rate").innerHTML = getStars(currentHomestay.cleanness);
+    document.getElementById("responsibility-rate").innerHTML = getStars(currentHomestay.responsibility);
+    document.getElementById("food-rate").innerHTML = getStars(currentHomestay.food);
+    document.getElementById("comfort-rate").innerHTML = getStars(currentHomestay.comfort);
+    document.getElementById("amenity-rate").innerHTML = getStars(currentHomestay.amenity);
+    document.getElementById("communication-rate").innerHTML = getStars(currentHomestay.communication);
+    document.getElementById("safety-rate").innerHTML = getStars(currentHomestay.safety);
+
     document.getElementById("homestayName").innerHTML = currentHomestay.homestayName.toString();
     document.getElementById("zipCode").innerHTML = currentHomestay.zipCode.toString();
+    document.getElementById("ethnicity").innerHTML = currentHomestay.ethnicity.toString();
+    document.getElementById("comment").innerHTML = currentHomestay.comment.toString();
 } 
-for (var i = 0; i < button.length; i++) {
-    button[i].addEventListener("click" , function(e){card1Button(e)});
+
+function addButtonEventListener () {
+    var button = document.getElementsByClassName("window-button");
+    for (var i = 0; i < button.length; i++) {
+        button[i].addEventListener("click" , function(e){card1Button(e)});
+    }
 }
+addButtonEventListener();
+
 
 var closebutton = document.getElementById("X");
 function Xclosebutton() {
@@ -208,3 +226,13 @@ function Xclosebutton() {
     } 
 }
 closebutton.addEventListener("click" , Xclosebutton);
+
+function doSearch() {
+    var searchWord = document.getElementById("search-query").value.toLowerCase();
+    var newList = listOfHomestays.filter(
+        homestay => homestay.zipCode == searchWord || 
+        homestay.homestayName.toLowerCase().includes(searchWord));
+        showHomestays(newList);
+        addButtonEventListener();
+}
+document.getElementById("search-button").addEventListener("click", doSearch);

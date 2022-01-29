@@ -34,8 +34,8 @@
             <nav class="navbar navbar-light bg-light">
                 <div class="container-fluid">
                   <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input id="search-query" class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+                    <button id="search-button" class="btn btn-outline-success" type="button">Search</button>
                   </form>
                 </div>
               </nav>
@@ -69,16 +69,13 @@
         </div> -->
         <div id="section-c" class="container-fluid row"> </div>
         <section id = "specifchomestay" style="display: none;">
-          //Put the specific homestay review page here instead of creating a new page (for java script) [pop up a small window]//
           <div id="homestayoverview" class="container-fluid">
             <div class="card mb-3">
               <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="..." class="img-fluid rounded-start" alt="...">
-                </div>
+                <div class="col-md-4"></div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h2 class="card-title" id="homestayName">Ms.Fanny</h2>
+                    <h2 class="card-title" id="homestayName"></h2>
                     <div id="X">
                       <button type="button" class="btn-close" aria-label="Close" data-close>
                       <span aria-hidden="true">&times;</span>
@@ -86,7 +83,7 @@
                       </div>
                     <!--<p class="card-text">Overall rate: <span id="overall-rate">★★★★★</span></p> -->
                     <p class="card-text">Zip code: <span id="zipCode"></span></p>
-                    <p class="card-text">Ethnic origin: <span id="ethnicOrigin"></span></p>
+                    <p class="card-text">Ethnic origin: <span id="ethnicity"></span></p>
                     <!--<p class="card-text">Total reviews: <span id="total"></span></p> -->
                   </div>
                 </div>
@@ -95,24 +92,23 @@
           </div>
           <hr>
           <div id="review1" class="container-fluid review"> 
-            <h5>Kevin's Review</h5>
+            <h5></h5>
             <div class="row">
             <div class="info col-sm-6" >
               <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">Safety: ★★★★★</li>
-                <li class="list-group-item">Communication with the homestay: ★★★★★</li>
-                <li class="list-group-item">Amenity(Wi-Fi Speed, Laundry etc): ★★★★☆</li>
-                <li class="list-group-item">Comfort: ★★★★★</li>
-                <li class="list-group-item">Food: ★★★★☆</li>
-                <li class="list-group-item">Responsibility: ★★★★★</li>
-                <li class="list-group-item">Culture: <span id="culture-rate">★★★★★</span></li>
-                <li class="list-group-item">Cleanness: <span id="cleanness-rate">★★★★★</span></li>
+                <li class="list-group-item">Safety: <span id="safety-rate"></span></li>
+                <li class="list-group-item">Communication with the homestay: <span id="communication-rate"></span></li>
+                <li class="list-group-item">Amenity(Wi-Fi Speed, Laundry etc): <span id="amenity-rate"></span></li>
+                <li class="list-group-item">Comfort: <span id="comfort-rate"></span></li>
+                <li class="list-group-item">Food: <span id="food-rate"></span></li>
+                <li class="list-group-item">Responsibility: <span id="responsibility-rate"></span></li>
+                <li class="list-group-item">Culture: <span id="culture-rate"></span></li>
+                <li class="list-group-item">Cleanness: <span id="cleanness-rate"></span></li>
               </ul>
             </div>
             <div class="info col-sm-6">
               <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">Student's comment: I have lived in my home stay for about a year. My home stay is super responsible whenever I have problems. And it really helpful for me as an international student who study alone in a foreign country. 
-                </li>
+                <li class="list-group-item">Student's Comment: <span id="comment"></span></li>
               </ul>
             </div>
           </div>
